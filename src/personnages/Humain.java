@@ -9,7 +9,10 @@ public class Humain {
 		this.boissonFavorite = boissonFavorite;
 		this.argent = argent;
 	}
-	private void parler(String texte) {
+	public String getNom() {
+		return nom;
+	}
+	protected void parler(String texte) {
 		System.out.println("("+nom + ") - "+ texte);
 	}
 	public void direBonjour() {
@@ -18,11 +21,14 @@ public class Humain {
 	public void boire() {
 		parler("Mmmmm, un bon verre de "+ boissonFavorite +" ! GLOUPS !" );
 	}
-	private void gagnerArgent( int gain) {
+	protected void gagnerArgent( int gain) {
 		argent = argent + gain;
 	}
-	private void perdreArgent(int perte) {
+	protected void perdreArgent(int perte) {
 		argent=argent-perte;
+	}
+	public int getArgent() {
+		return argent;
 	}
 	public void acheter(String bien, int prix) {
 		if (argent >= prix) {
